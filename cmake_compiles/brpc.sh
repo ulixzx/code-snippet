@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+output=${1}
+
+cmake ../ \
+-DCMAKE_INSTALL_PREFIX=${output} \
+-DCMAKE_BUILD_TYPE=release \
+-DCMAKE_APPLE_SILICON_PROCESSOR=arm64 \
+-DCMAKE_SYSTEM_PROCESSOR=arm64  \
+-DCMAKE_CXX_STANDARD=17 \
+-DCMAKE_CXX_STANDARD_REQUIRED=ON \
+-DCMAKE_CXX_EXTENSIONS=OFF \
+-DWITH_BORINGSSL=ON \
+-DGFLAGS_DIR=${output} \
+-DProtobuf_DIR=${output} \
+-Dabsl_DIR=${output} \
+-DBoringSSL_DIR=${output} \
+
